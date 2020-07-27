@@ -1,18 +1,20 @@
 import React from 'react';
 import './App.css';
-import {useLocation} from 'react-router';
+// import {useLocation} from 'react-router';
+import {withRouter} from 'react-router-dom';
 import Nav from './Components/nav/Nav';
 import routes from './routes';
 
-function App() {
-  let location = useLocation();
-  console.log(location)
+function App(props) {
+  // let location = useLocation();
+  // console.log(location)
+  console.log(props)
   return (
     <div className="App">
-      {location.pathname==='/'?null:location.pathname==='/register'?null:<Nav/>}
+      {props.location.pathname==='/'?null:props.location.pathname==='/register'?null:<Nav/>}
       {routes}
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);

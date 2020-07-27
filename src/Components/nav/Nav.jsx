@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import axios from 'axios';
-import {clearUser} from '../../redux/reducers/userReducer'
+import {clearUser} from '../../redux/reducers/userReducer';
+import {setStock} from '../../redux/reducers/stockReducer';
+import { withRouter } from 'react-router-dom';
 
 const Nav = props =>{
-    console.log(props)
+    // console.log(props)
+    let [ticker, setTicker] = useState('')
+
    const handleClick=()=>{
             axios.get('/auth/logout')
             .then(()=>{
@@ -13,10 +17,20 @@ const Nav = props =>{
         })
     }
 
+    const handleSearch=()=>{
+        axios.post(`/api/ticker/${ticker}`)
+        .then(res=>{
+            console.log(res.data)
+            console.log(props)
+            props.setStock(res.data)
+            props.history.push(`/stock/${ticker}`);
+        })
+    }
+
     return(
         <div>
-            <input></input>
-            <button>Search</button>
+            <input placeholder='Ticker search' value={ticker} onChange={e => setTicker(e.target.value)}/>
+            <button onClick={handleSearch}>Search</button>
             <Link to='/portfolio'>
                 <p>Portfolio</p>
             </Link>
@@ -27,4 +41,4 @@ const Nav = props =>{
     )
 }
 
-export default connect(null,{clearUser})(Nav);
+export default connect(null,{clearUser,setStock})(withRouter(Nav));

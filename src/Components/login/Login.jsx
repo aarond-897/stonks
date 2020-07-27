@@ -15,7 +15,7 @@ const Login = props => {
             console.log(res.data)
             console.log(props)
             props.setUser(res.data.username,res.data.profile_picture, res.data.email)
-            //change push to home page if set up
+            //TODO change push to home page if set up
             props.history.push('/portfolio')
         })
     }
@@ -23,7 +23,7 @@ const Login = props => {
     return(
         <div>
             <input placeholder='email' value={email} onChange={e => setEmail(e.target.value)}/>
-            <input placeholder='password' value={password} onChange={e => setPassword(e.target.value)}/>
+            <input placeholder='password' type='password' value={password} onChange={e => setPassword(e.target.value)}/>
             <button onClick={handleLogin}>Login</button>
             <Link to='/register'>
             <button>Register</button>

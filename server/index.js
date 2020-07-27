@@ -37,7 +37,8 @@ app.post('/auth/login',authCtrl.login);
 app.get('/auth/logout', authCtrl.logout);
 
 //user endpoints
-app.post('/api/ticker/:ticker', finnhubCtrl.getFinInfo)
+
 //finnHub endpoint
+app.post('/api/ticker/:ticker', finnhubCtrl.getFinInfo)
 
 app.listen(port, ()=>console.log(`Connected on port ${port}`))
