@@ -10,9 +10,15 @@ const Nav = props =>{
     // console.log(props)
     let [ticker, setTicker] = useState('')
 
+    console.log(props)
 
     useEffect(()=>{
-
+        console.log('hit use effect')
+        axios.get('/auth/stock')
+        .then(res=>{
+            console.log(res)
+            props.setStock(res.data)
+        })
     },[])
 
    const handleClick=()=>{
@@ -46,4 +52,6 @@ const Nav = props =>{
     )
 }
 
-export default connect(null,{clearUser,setStock})(withRouter(Nav));
+const mapStateToProps = reduxState=>reduxState
+
+export default connect(mapStateToProps,{clearUser,setStock})(withRouter(Nav));

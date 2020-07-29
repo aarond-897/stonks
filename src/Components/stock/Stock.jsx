@@ -13,23 +13,25 @@ import { withRouter } from 'react-router-dom';
 
 const Stock = props =>{
     
-
+    console.log(props)
 
     return(
         <div>
+            {props.compProfile? <>           
             <StockHeader />
-            <Candlestick />
             <IncomeStatement />
             <CorporateInfo />
             <Filings />
             <KeyDataPoints />
             <BalanceSheet />
-            <CorporateNews />
+            <CorporateNews /> 
+             <Candlestick /></>:null}
+ 
         </div>
     )
 }
 
-
-export default Stock;
+const mapStateToProps = reduxState =>reduxState.stockReducer
+export default connect(mapStateToProps)(Stock);
 
 

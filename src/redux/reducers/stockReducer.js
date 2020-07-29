@@ -1,5 +1,5 @@
 const initialState = {
-
+    
 }
 
 const SET_STOCK='SET_STOCK';

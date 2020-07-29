@@ -40,8 +40,9 @@ module.exports={
         //TODO send prevalent information to front end to be stored on redux state
         const apiInfo={compProfile:compProfile.data,companyNews:companyNews.data,basicFin: basicFin.data, quarterly: quarterly.data, yearlyFilings: yearlyFilings.data, stockCandles: stockCandles.data}
         // console.log(companyNews.data)
-        // console.log(quote)
-        res.status(200).send(apiInfo)
+        req.session.stock=apiInfo
+        console.log(req.session)
+        res.status(200).send(req.session.stock)
 
     }
 }

@@ -35,6 +35,7 @@ massive({
 app.post('/auth/register',authCtrl.register);
 app.post('/auth/login',authCtrl.login);
 app.get('/auth/logout', authCtrl.logout);
+app.get('/auth/stock',authCtrl.getStock)
 
 //user endpoints
 
@@ -42,6 +43,5 @@ app.get('/auth/logout', authCtrl.logout);
 app.post('/api/ticker/:ticker', finnhubCtrl.getFinInfo)
 
 //save redux state
-
 
 app.listen(port, ()=>console.log(`Connected on port ${port}`))

@@ -47,5 +47,11 @@ module.exports = {
         console.log('logout')
         req.session.destroy();
         res.sendStatus(200);
+    },
+
+    getStock:(req,res)=>{
+        console.log(req.session)
+        console.log('get stock working')
+        res.status(200).send(req.session.stock);
     }
 }
