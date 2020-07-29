@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Component } from 'react';
+import './stock.css'
 import StockHeader from './stockComponents/StockHeader';
 import Candlestick  from './stockComponents/Candlestick';
 import IncomeStatement  from './stockComponents/IncomeStatement';
