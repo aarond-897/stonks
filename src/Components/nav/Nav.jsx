@@ -10,13 +10,18 @@ const Nav = props =>{
     // console.log(props)
     let [ticker, setTicker] = useState('')
 
+
+    useEffect(()=>{
+
+    },[])
+
    const handleClick=()=>{
             axios.get('/auth/logout')
             .then(()=>{
                 props.clearUser()
         })
     }
-
+    console.log(ticker)
     const handleSearch=()=>{
         axios.post(`/api/ticker/${ticker}`)
         .then(res=>{

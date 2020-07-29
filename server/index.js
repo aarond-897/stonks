@@ -41,4 +41,7 @@ app.get('/auth/logout', authCtrl.logout);
 //finnHub endpoint
 app.post('/api/ticker/:ticker', finnhubCtrl.getFinInfo)
 
+//save redux state
+
+
 app.listen(port, ()=>console.log(`Connected on port ${port}`))
