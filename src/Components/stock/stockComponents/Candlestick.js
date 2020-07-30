@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import React, { useState, useEffect, useRef } from 'react';
-import {select, axisBottom, axisLeft, scaleBand, scaleLinear, scaleDiverging, style, min, max, range} from 'd3';
+import {select, axisBottom, axisLeft, scaleBand, scaleLinear, scaleDiverging, style, min, max, range, time} from 'd3';
 import useResizeObserver from "./useResizeObserver";
 
 
@@ -20,29 +20,53 @@ const Candlestick = props =>{
             console.log(width, height)
         const svg=select(svgRef.current);
 
+        const unixDateConversion=time=>{
+            let date = new Date(time *1000);
+            console.log(date)
+            let month = date.getMonth()+1
+            console.log(month)
+            let day = date.getDate()
+            console.log(day)
+            return `${month}/${day}`
+        }
 
-        const xScale = scaleBand()
-// //TODO insert domain dates once time is converted. check responsive vid
-            .domain(props.t.map((value, index)=>{
-                // console.log(value) unixtimecode
-                // console.log(index) index
-            return index} ))
-// //TODO insert range once measurements are figured out
-            .range([0, width])
+        
+        unixDateConversion(1565011800)
+
+        let data=[];
+        let time=[];
+
+        for (let i=0; i<props.c.length; i++){
+            data.push(
+                {
+                    close:props.c[i],
+                    high:props.h[i],
+                    low:props.l[i],
+                    open:props.o[i],
+                    time:unixDateConversion(props.t[i])
+                }
+            )
+            time.push(unixDateConversion(props.t[i]))
+        }
+        console.log(data)
+        console.log(time)
+
+        const xScale = scaleLinear()
+            .domain([0, data.length] )
+            .range([0, width*.987])
 
         console.log(xScale)
     
 
         const yScale = scaleLinear()
             .domain([min(props.h),max(props.h)])
-            .range([height,0])
+            .range([height*.9,0])
 
         console.log(props)
             
-        const xAxis = axisBottom(xScale).ticks(props.c.length);
-            svg 
-                .select(".x-axis")
-                .style("transform", `translateY(${height}px)`)
+        const xAxis = axisBottom(xScale).ticks(12);
+            svg.select(".x-axis")
+                .style("transform", `translateY(${height-25}px)`)
                 .call(xAxis)
         console.log(xAxis)
         
@@ -56,30 +80,7 @@ const Candlestick = props =>{
 
         let xBand = scaleBand().domain(range(-1, props.c.length)).range([0, width]).padding(0.5)
 
-        const unixDateConversion=time=>{
-            let date = new Date(time *1000);
-            console.log(date)
-            console.log(date.getMonth()+1)
-            console.log(date.getDate())
-        }
 
-        
-        unixDateConversion(1565011800)
-
-        let data=[];
-
-        for (let i=0; i<props.c.length; i++){
-            data.push(
-                {
-                    close:props.c[i],
-                    high:props.h[i],
-                    low:props.l[i],
-                    open:props.o[i],
-                    time:props.t[i]
-                }
-            )
-        }
-        console.log(data)
 
 //     //join update pattern:
             svg.selectAll(".candle")
@@ -92,11 +93,17 @@ const Candlestick = props =>{
                 .attr('height', d => (d.open === d.close) ? 1 : yScale(Math.min(d.open, d.close))-yScale(Math.max(d.open, d.close)))
                 .attr("fill", d => (d.open === d.close) ? "silver" : (d.open > d.close) ? "red" : "green")
 
-                // .style("transform","scale(1,-1)")
-                // .attr("x", (value, index)=>xScale(index))
-                // .attr("y", -height)
-                // .attr("stroke", 'red')
-                // .attr("width", xScale.bandwidth())
+
+            svg.selectAll(".stem")
+                .data(data)
+                .join('line')
+                .attr("class", "stem")
+                .attr("x1", (d, i) => xScale(i) - xBand.bandwidth()/2)
+                .attr("x2", (d, i) => xScale(i) - xBand.bandwidth()/2)
+                .attr("y1", d => yScale(d.high))
+                .attr("y2", d => yScale(d.low))
+                .attr("stroke", d => (d.open === d.close) ? "white" : (d.open > d.close) ? "red" : "green");
+                
         
     },[props, dimensions])
 
@@ -105,11 +112,11 @@ const Candlestick = props =>{
         <React.Fragment>
             <div ref={wrapperRef}>
                 <svg ref={svgRef}>
-                    <g className='x-axis' />
                     <g className='y-axis' />
+                    <g className='x-axis' />
                 </svg>
             </div>
-        </React.Fragment>
+        // </React.Fragment>
     )
 }
 
@@ -117,27 +124,3 @@ const mapStateToProps=reduxState=>reduxState.stockReducer.stockCandles;
 
 export default connect(mapStateToProps)(Candlestick);
 
-
-
-// !!!!!go back to later
-
-  //maybe use hooks to and useState to update data values using filter
-    //might make a usestate for each property on props
-    // const [data, setData] = useState(props)
-    // console.log(props)
-    // console.log(data)
-
-    //TODO determine if unix conversion should take place on front or back end
-    //converts time to yyyy-mm-dd
-    // const unixTimeConverter=(date)=>{
-
-    // }
-
-
-    // let dateFormat = d3.timeParse("%Y-%m-%d");
-    //loops through time prop and applies conversion
-    // for(let i=0; i<props.t.length; i++){
-        // data.t[i] = unixTimeConverter(data.t[i]);
-    // }
-    // console.log(data)
-    // console.log(props)

@@ -20,13 +20,14 @@ const Stock = props =>{
         <div>
             {props.compProfile? <>           
             <StockHeader />
+             <Candlestick />
             <IncomeStatement />
             <CorporateInfo />
             <Filings />
             <KeyDataPoints />
             <BalanceSheet />
             <CorporateNews /> 
-             <Candlestick /></>:null}
+             </>:null}
  
         </div>
     )
