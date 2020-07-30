@@ -29,7 +29,7 @@ const Nav = props =>{
     }
     console.log(ticker)
     const handleSearch=()=>{
-        axios.post(`/api/ticker/${ticker}`)
+        axios.get(`/api/ticker/${ticker}`)
         .then(res=>{
             console.log(res.data)
             console.log(props)

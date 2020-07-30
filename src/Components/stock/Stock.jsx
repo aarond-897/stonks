@@ -10,7 +10,7 @@ import BalanceSheet  from './stockComponents/BalanceSheet';
 import CorporateNews  from './stockComponents/CorporateNews';
 import {setStock} from '../../redux/reducers/stockReducer';
 import {connect} from 'react-redux';
-import { withRouter } from 'react-router-dom';
+
 
 const Stock = props =>{
     

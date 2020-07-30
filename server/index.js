@@ -38,10 +38,12 @@ app.get('/auth/logout', authCtrl.logout);
 app.get('/auth/stock',authCtrl.getStock)
 
 //user endpoints
+app.post('/api/stock', userCtrl.addStock)
+app.post('/api/quantity', userCtrl.addStockQty)
+// app.put('/api/quantity', userCtrl.changeStockQty)
 
 //finnHub endpoint
-app.post('/api/ticker/:ticker', finnhubCtrl.getFinInfo)
+app.get('/api/ticker/:ticker', finnhubCtrl.getFinInfo)
 
-//save redux state
 
 app.listen(port, ()=>console.log(`Connected on port ${port}`))

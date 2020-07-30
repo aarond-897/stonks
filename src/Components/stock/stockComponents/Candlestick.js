@@ -22,11 +22,11 @@ const Candlestick = props =>{
 
         const unixDateConversion=time=>{
             let date = new Date(time *1000);
-            console.log(date)
+            // console.log(date)
             let month = date.getMonth()+1
-            console.log(month)
+            // console.log(month)
             let day = date.getDate()
-            console.log(day)
+            // console.log(day)
             return `${month}/${day}`
         }
 
@@ -116,7 +116,7 @@ const Candlestick = props =>{
                     <g className='x-axis' />
                 </svg>
             </div>
-        // </React.Fragment>
+        </React.Fragment>
     )
 }
 
