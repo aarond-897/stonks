@@ -36,11 +36,14 @@ app.post('/auth/register',authCtrl.register);
 app.post('/auth/login',authCtrl.login);
 app.get('/auth/logout', authCtrl.logout);
 app.get('/auth/stock',authCtrl.getStock)
+app.get('/auth/user',authCtrl.getUser)
 
 //user endpoints
 app.post('/api/stock', userCtrl.addStock)
 app.post('/api/quantity', userCtrl.addStockQty)
-// app.put('/api/quantity', userCtrl.changeStockQty)
+app.put('/api/quantity', userCtrl.changeStockQty)
+app.delete('/api/quantity/:ticker', userCtrl.deleteStock)
+app.get('/api/portfolio', userCtrl.retrievePortfolio)
 
 //finnHub endpoint
 app.get('/api/ticker/:ticker', finnhubCtrl.getFinInfo)

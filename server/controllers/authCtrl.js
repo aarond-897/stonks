@@ -53,5 +53,11 @@ module.exports = {
         console.log(req.session)
         console.log('get stock working')
         res.status(200).send(req.session.stock);
+    },
+
+    getUser:(req,res)=>{
+        console.log(req.session)
+        console.log('get user working')
+        res.status(200).send(req.session.user);
     }
 }

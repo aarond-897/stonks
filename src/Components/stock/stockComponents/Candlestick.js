@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import React, { useState, useEffect, useRef } from 'react';
-import {select, axisBottom, axisLeft, scaleBand, scaleLinear, scaleDiverging, style, min, max, range, time} from 'd3';
+import {select, axisBottom, axisLeft, scaleBand, scaleLinear, scaleDiverging, style, min, max, range, timeFormat,scaleTime} from 'd3';
 import useResizeObserver from "./useResizeObserver";
 
 
@@ -22,16 +22,10 @@ const Candlestick = props =>{
 
         const unixDateConversion=time=>{
             let date = new Date(time *1000);
-            // console.log(date)
-            let month = date.getMonth()+1
-            // console.log(month)
-            let day = date.getDate()
-            // console.log(day)
-            return `${month}/${day}`
+            let format = timeFormat("%Y-%m-%d");
+            let dateTick = format(date)
+            return dateTick;
         }
-
-        
-        unixDateConversion(1565011800)
 
         let data=[];
         let time=[];
@@ -46,20 +40,21 @@ const Candlestick = props =>{
                     time:unixDateConversion(props.t[i])
                 }
             )
+            data[i].time=unixDateConversion(props.t[i])
             time.push(unixDateConversion(props.t[i]))
         }
         console.log(data)
         console.log(time)
 
-        const xScale = scaleLinear()
-            .domain([0, data.length] )
-            .range([0, width*.987])
+        const xScale =scaleTime()
+            .domain([new Date(time[0]), new Date(time[time.length-1])] )
+            .range([0, width*.97])
 
         console.log(xScale)
     
 
         const yScale = scaleLinear()
-            .domain([min(props.h),max(props.h)])
+            .domain([min(props.l),max(props.h)])
             .range([height*.9,0])
 
         console.log(props)
@@ -78,7 +73,7 @@ const Candlestick = props =>{
         
         console.log(yAxis)
 
-        let xBand = scaleBand().domain(range(-1, props.c.length)).range([0, width]).padding(0.5)
+        let xBand = scaleBand().domain(range(0, props.c.length)).range([0, width]).padding(0.5)
 
 
 
@@ -87,7 +82,7 @@ const Candlestick = props =>{
                 .data(data)
                 .join('rect')
                 .attr("class", "candle")
-                .attr('x', (d, i) => xScale(i) - xBand.bandwidth())
+                .attr('x', (d, i) => xScale(new Date(d.time)) - xBand.bandwidth())
                 .attr('y', d => yScale(Math.max(d.open, d.close)))
                 .attr('width', xBand.bandwidth())
                 .attr('height', d => (d.open === d.close) ? 1 : yScale(Math.min(d.open, d.close))-yScale(Math.max(d.open, d.close)))
@@ -98,8 +93,8 @@ const Candlestick = props =>{
                 .data(data)
                 .join('line')
                 .attr("class", "stem")
-                .attr("x1", (d, i) => xScale(i) - xBand.bandwidth()/2)
-                .attr("x2", (d, i) => xScale(i) - xBand.bandwidth()/2)
+                .attr("x1", (d, i) => xScale(new Date(d.time)) - xBand.bandwidth()/2)
+                .attr("x2", (d, i) => xScale(new Date(d.time)) - xBand.bandwidth()/2)
                 .attr("y1", d => yScale(d.high))
                 .attr("y2", d => yScale(d.low))
                 .attr("stroke", d => (d.open === d.close) ? "white" : (d.open > d.close) ? "red" : "green");

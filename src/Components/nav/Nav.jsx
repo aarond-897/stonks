@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import axios from 'axios';
-import {clearUser} from '../../redux/reducers/userReducer';
+import {clearUser, setUser} from '../../redux/reducers/userReducer';
 import {setStock} from '../../redux/reducers/stockReducer';
 import { withRouter } from 'react-router-dom';
 
@@ -18,6 +18,12 @@ const Nav = props =>{
         .then(res=>{
             console.log(res)
             props.setStock(res.data)
+        })
+        axios.get('/auth/user')
+        .then(res=>{
+            console.log(res)
+            let {user_id, email, profile_picture, username} = res.data
+            props.setUser(user_id, email, profile_picture, username)
         })
     },[])
 
@@ -54,4 +60,4 @@ const Nav = props =>{
 
 const mapStateToProps = reduxState=>reduxState
 
-export default connect(mapStateToProps,{clearUser,setStock})(withRouter(Nav));
+export default connect(mapStateToProps,{clearUser,setStock, setUser})(withRouter(Nav));
