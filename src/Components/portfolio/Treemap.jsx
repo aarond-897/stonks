@@ -10,7 +10,7 @@ const Treemap = props =>{
     const wrapperRef = useRef();
     const dimensions =useResizeObserver(wrapperRef);
 
-    useEffect=(()=>{
+    useEffect(()=>{
         console.log(svgRef)
         const { width, height } = dimensions || wrapperRef.current.getBoundingClientRect();
             console.log(width, height)

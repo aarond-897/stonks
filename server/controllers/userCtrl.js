@@ -87,6 +87,7 @@ module.exports={
             let price = await axios.get(`https://finnhub.io/api/v1/quote?symbol=${portfolio[i].ticker.toUpperCase()}&token=${API_KEY}`)
             console.log(price.data.c)
             portfolio[i].price=price.data.c
+            portfolio[i].total = +(portfolio[i].price * portfolio[i].quantity).toFixed(2)
             console.log(portfolio)
         }
         res.status(200).send(portfolio);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import {connect} from 'react-redux';
+import {connect} from 'react-redux';
 
 const OwnedStock = props =>{
     console.log(props)
@@ -26,6 +26,6 @@ const OwnedStock = props =>{
 
 }
 
-// const mapStateToProps = reduxState =>reduxState.portfolio
+const mapStateToProps = reduxState =>reduxState
 
-export default OwnedStock;
+export default connect(mapStateToProps)(OwnedStock);
