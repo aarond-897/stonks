@@ -82,14 +82,12 @@ module.exports={
         {API_KEY}=process.env,
         db=req.app.get('db')
         let portfolio = await db.user.return_stocks({user_id})
-        console.log(portfolio)
         for (let i=0; i<portfolio.length; i++){
             let price = await axios.get(`https://finnhub.io/api/v1/quote?symbol=${portfolio[i].ticker.toUpperCase()}&token=${API_KEY}`)
-            console.log(price.data.c)
             portfolio[i].price=price.data.c
             portfolio[i].total = +(portfolio[i].price * portfolio[i].quantity).toFixed(2)
-            console.log(portfolio)
         }
+        console.log(portfolio)
         res.status(200).send(portfolio);
     }
 }
