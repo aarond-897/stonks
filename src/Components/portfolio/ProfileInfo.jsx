@@ -8,8 +8,7 @@ const ProfileInfo = props =>{
         <div>
             <img className='profile-pic' src={props.profilePicture} alt=""/>
             <h2>Username:{props.username}</h2>
-            <h2>Email:{props.email}</h2>
-            <OwnedStock />
+            <h2>Email:{props.email}</h2>   
         </div>
     )
 

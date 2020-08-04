@@ -23,7 +23,7 @@ const Nav = props =>{
         .then(res=>{
             console.log(res)
             let {user_id, email, profile_picture, username} = res.data
-            props.setUser(user_id, email, profile_picture, username)
+            props.setUser(user_id, username, profile_picture, email)
         })
     },[])
 

@@ -9,6 +9,7 @@ const authCtrl = require('./controllers/authCtrl'),
 const express = require('express'),
       massive = require('massive'),
       session = require('express-session'),
+      nodemailer = require('nodemailer'),
       {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET}=process.env,
       port=SERVER_PORT,
       app=express();

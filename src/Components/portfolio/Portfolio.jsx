@@ -5,6 +5,7 @@ import axios from 'axios';
 import {setStocks} from '../../redux/reducers/stocksOwnedReducer'
 import PortfolioStocks from './PortfolioStocks'
 import Treemap from './Treemap'
+import './portfolio.css'
 
 
 const Portfolio = props =>{
@@ -21,12 +22,12 @@ const Portfolio = props =>{
             console.log('retrieveStocks working')
             console.log(res)
             console.log(props)
-            setStocks(res.data)
+            props.setStocks(res.data)
         })
     }
     return(
         <div>
-            {props?
+            {props.portfolio[0]?
             <>
             {console.log(props)}
             <ProfileInfo />
@@ -34,7 +35,7 @@ const Portfolio = props =>{
             <Treemap />
             <button onClick={retrieveStocks}>retrieve stocks</button>
             </>
-        :null}
+        :<p>Please add stocks</p>}
         </div>
     )
 }

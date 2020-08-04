@@ -1,21 +1,16 @@
 import {connect} from 'react-redux';
 import React, { useState, useEffect, useRef } from 'react';
-import {select, axisBottom, axisLeft, scaleBand, scaleLinear, scaleDiverging, style, min, max, range, timeFormat,scaleTime} from 'd3';
+import {select, axisBottom, axisLeft, scaleBand, scaleLinear, style, min, max, range, timeFormat,scaleTime} from 'd3';
 import useResizeObserver from "./useResizeObserver";
 
 
 const Candlestick = props =>{
-    console.log(props)
-    console.log(props.c.length)
     const svgRef = useRef();
     const wrapperRef = useRef();
     const dimensions =useResizeObserver(wrapperRef);
-    console.log(dimensions)
-    console.log(svgRef)
     
 //called initially and on every data change
     useEffect(()=>{
-            console.log(svgRef)
         const { width, height } = dimensions || wrapperRef.current.getBoundingClientRect();
             console.log(width, height)
         const svg=select(svgRef.current);
@@ -44,7 +39,6 @@ const Candlestick = props =>{
             time.push(unixDateConversion(props.t[i]))
         }
         console.log(data)
-        console.log(time)
 
         const xScale =scaleTime()
             .domain([new Date(time[0]), new Date(time[time.length-1])] )

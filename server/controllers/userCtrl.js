@@ -52,16 +52,24 @@ module.exports={
     changeStockQty:async(req,res)=>{
         console.log('change stock qty working')
         console.log(req.session.user)
-        const {ticker, quantity} = req.body,
+        const {ticker, quantity, operator} = req.body,
             {user_id} = req.session.user,
             db=req.app.get('db')
         let stock_id = await db.user.get_stock_id({ticker})
         stock_id= stock_id[0].stock_id
+        
+        if( operator==='add'){
+            db.user.change_qty({user_id, stock_id, quantity})
+            .then(()=>{
+                return res.sendStatus(200)
+            })
+        }else{
+            db.user.subtract_qty({user_id, stock_id, quantity})
+            .then(()=>{
+                return res.sendStatus(200)
+            })
+        }
 
-        db.user.change_qty({user_id, stock_id, quantity})
-        .then(()=>{
-            return res.sendStatus(200)
-        })
     },
     deleteStock: async(req,res)=>{
         console.log('delete stock working')

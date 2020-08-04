@@ -16,7 +16,9 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "massive": "^6.6.0",
+    "nodemailer": "^6.4.11",
     "react": "^16.13.1",
+    "react-d3-treemap": "^1.0.15",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
@@ -25,6 +27,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "resize-observer-polyfill": "^1.5.1",
+    "string-to-color": "^2.2.1",
     "three": "^0.118.3"
   },
   "scripts": {
