@@ -28,6 +28,7 @@
     "redux-devtools-extension": "^2.13.8",
     "resize-observer-polyfill": "^1.5.1",
     "string-to-color": "^2.2.1",
+    "styled-components": "^5.1.1",
     "three": "^0.118.3"
   },
   "scripts": {

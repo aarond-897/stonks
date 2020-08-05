@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
-import React, { useState, useEffect, useRef } from 'react';
-import {select, axisBottom, axisLeft, scaleBand, scaleLinear, style, min, max, range, timeFormat,scaleTime} from 'd3';
+import React, { useEffect, useRef } from 'react';
+import {select, axisBottom, axisLeft, scaleBand, scaleLinear, style, min, max, range, timeFormat,scaleTime, mouse} from 'd3';
 import useResizeObserver from "./useResizeObserver";
 
 
@@ -69,7 +69,44 @@ const Candlestick = props =>{
 
         let xBand = scaleBand().domain(range(0, props.c.length)).range([0, width]).padding(0.5)
 
+        let tooltip = select("svg")
+        .append("div")
+        .style("opacity", 1)
+        .attr("class", "tooltip")
+        .style("background-color", "white")
+        .style("border", "solid")
+        .style("border-width", "1px")
+        .style("border-radius", "5px")
+        .style("padding", "10px")
+        .style('position', 'fixed')
+        .style('left', 100)
+        .style('top', 1000)
+        .style('z-index', 1000)
+        console.log(tooltip)
+        
 
+        let mouseover = function(d) {
+            console.log('mouseover works')
+            console.log(tooltip)
+            tooltip.style("opacity", 1)
+          }
+        
+          let mousemove = function(d) {
+              console.log('mousemove works')
+            //   console.log(mouse(this))
+            tooltip
+              .html(`${d.high}`)
+            //   .style("left", (mouse(this)[0]+90) + "px") 
+            //   .style("top", (mouse(this)[1]) + "px")
+          }
+        
+          // A function that change this tooltip when the leaves a point: just need to set opacity to 0 again
+          let mouseleave = function(d) {
+            tooltip
+              .transition()
+              .duration(200)
+              .style("opacity", 1)
+          }
 
 //     //join update pattern:
             svg.selectAll(".candle")
@@ -81,6 +118,10 @@ const Candlestick = props =>{
                 .attr('width', xBand.bandwidth())
                 .attr('height', d => (d.open === d.close) ? 1 : yScale(Math.min(d.open, d.close))-yScale(Math.max(d.open, d.close)))
                 .attr("fill", d => (d.open === d.close) ? "silver" : (d.open > d.close) ? "red" : "green")
+                .on("mouseover", mouseover)
+                .on("mousemove", mousemove)
+                .on("mouseleave", mouseleave)
+ 
 
 
             svg.selectAll(".stem")

@@ -9,7 +9,6 @@ const authCtrl = require('./controllers/authCtrl'),
 const express = require('express'),
       massive = require('massive'),
       session = require('express-session'),
-      nodemailer = require('nodemailer'),
       {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET}=process.env,
       port=SERVER_PORT,
       app=express();
@@ -31,6 +30,7 @@ massive({
     app.set('db',db);
     console.log('db connected')
 }).catch(err=>console.log(err));
+
 
 //auth endpoints
 app.post('/auth/register',authCtrl.register);

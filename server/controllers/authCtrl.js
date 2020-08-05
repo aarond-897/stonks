@@ -1,8 +1,11 @@
+require('dotenv').config();
 const bcrypt = require('bcryptjs')
+const nodemailer = require('nodemailer')
 
 module.exports = {
     register: async(req, res)=>{
         const {username, email, password, profilePicture}=req.body,
+                {SITE_EMAIL,EMAIL_PASSWORD}=process.env,
             db=req.app.get('db');
         
         const foundUser = await db.auth.check_user({email});
@@ -15,10 +18,36 @@ module.exports = {
             hash=bcrypt.hashSync(password, salt);
 
         const newUser = await db.auth.register_user({username, email, password:hash, profilePicture});
+
         console.log(newUser)
         req.session.user=newUser[0];
         console.log(req.session.user)
         res.status(201).send(req.session.user);
+
+        //nodemailer
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth:{
+                user: SITE_EMAIL,
+                pass:EMAIL_PASSWORD
+            }
+        })
+
+        let mailOptions = {
+            from: 'finrainmaker@gmail.com',
+            to: email,
+            subject: 'Thank you for joining Rainmaker!!!',
+            text: `Hello ${username},
+            Getting started with Rainmaker: Using Rainmaker you will be able to keep track of your portfolio in a manageable way. You will also have the ability to search a stock and view vital information such as news, balance sheets, income statements, daily price metrics, and visualize data over a specified duration, in one easy to access source. I hope you enjoy and if there are any improvements you would like to see made feel free to respond back to finrainmaker@gmail.com`
+        }
+
+        transporter.sendMail(mailOptions, (err,data)=>{
+            if (err){
+                console.log('Error Occurs')
+            }else{
+                console.log('email sent')
+            }
+        })
     },
 
     login: async(req, res)=>{
