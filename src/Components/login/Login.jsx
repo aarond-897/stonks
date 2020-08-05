@@ -51,23 +51,23 @@ import styled from 'styled-components';
     const ButtonWrapper = styled.div`
         background-color: #585761;
         color: white;
-        height 3vh;
+        height: 3vh;
         width: 30%;
         border-radius: 15%;
         text-align:center;
         vertical-align: middle;
         /* //TODO change to pointer cursor */
-    `
+    `;
 
     const ButtonLogin = styled.button`
         background-color: #585761;
         color: white;
-        height 3vh;
+        height: 3vh;
         width: 100%;
         border-radius: 15%;
         text-align:center;
         vertical-align: middle;
-    `
+    `;
     // const ButtonRegister = styled.div`
     //     background-color: #585761;
     //     color: white;
