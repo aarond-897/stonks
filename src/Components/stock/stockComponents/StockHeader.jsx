@@ -10,8 +10,8 @@ const StockHeaderContainer = styled.div`
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background: #161920;
-    /* margin-bottom:1%; */
+    /* background: #161920; */
+    margin-bottom:1%;
 `
 
 const HeaderImage = styled.img`

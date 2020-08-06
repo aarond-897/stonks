@@ -10,26 +10,43 @@ import BalanceSheet  from './stockComponents/BalanceSheet';
 import CorporateNews  from './stockComponents/CorporateNews';
 import {setStock} from '../../redux/reducers/stockReducer';
 import {connect} from 'react-redux';
+import styled from 'styled-components';
 
+const StockContainer=styled.div`
+    background-color:#161920;
+`
+const InfoContainer = styled.div`
+    display:flex;
+`
+
+const KeyDataAndInfo = styled.div`
+    display:flex;
+    flex-direction:column;
+    width:30%;
+`
 
 const Stock = props =>{
     
     console.log(props)
 
     return(
-        <div>
+        <StockContainer>
             {props.compProfile? <>           
             <StockHeader />
              <Candlestick />
+             <InfoContainer>
+            <KeyDataAndInfo>
+                <KeyDataPoints />
+                <CorporateInfo />
+            </KeyDataAndInfo>
             <IncomeStatement />
-            <CorporateInfo />
-            {/* <Filings /> */}
-            <KeyDataPoints />
             <BalanceSheet />
             <CorporateNews /> 
+            </InfoContainer>
+            {/* <Filings /> */}
              </>:null}
  
-        </div>
+        </StockContainer>
     )
 }
 

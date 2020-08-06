@@ -11,7 +11,7 @@ const Candlestick = props =>{
     
 //called initially and on every data change
     useEffect(()=>{
-        const { width, height } = dimensions || wrapperRef.current.getBoundingClientRect();
+        let { width, height } = dimensions || wrapperRef.current.getBoundingClientRect();
             console.log(width, height)
         const svg=select(svgRef.current);
         svg.style("background-color","#161920")
@@ -54,7 +54,7 @@ const Candlestick = props =>{
 
         console.log(props)
             
-        const xAxis = axisBottom(xScale).ticks(12);
+        const xAxis = axisBottom(xScale).ticks(4);
             svg.select(".x-axis")
                 .style("transform", `translateY(${height-25}px)`)
                 .style("color", "white")

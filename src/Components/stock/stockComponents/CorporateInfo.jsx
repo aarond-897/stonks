@@ -1,19 +1,31 @@
 import {connect} from 'react-redux';
 import React, { useState, useEffect } from 'react';
-import { map } from 'd3';
+import styled from 'styled-components';
+import {DataProperty, DataValue, DataPointContainer, Title} from './KeyDataPoints';
+
 
 const CorporateInfo = props =>{
 
-    //name, finnhub industry, ipo, weburl, phone
     console.log(props)
     return(
-        <div>
-            <p>Name:{props.compProfile.name}</p>
-            <p>Website:{props.compProfile.weburl}</p>
-            <p>Phone:{props.compProfile.phone}</p>
-            <p>Industry:{props.compProfile.finnhubIndustry}</p>
-            <p>IPO:{props.compProfile.ipo}</p>
-        </div>
+        <DataPointContainer>
+            <Title>Corporate Info</Title>
+            <DataProperty>
+                Name:<DataValue>{props.compProfile.name}</DataValue>
+                </DataProperty>
+            <DataProperty>
+                Website:<DataValue>{props.compProfile.weburl}</DataValue>
+            </DataProperty>
+            <DataProperty>
+                Phone:<DataValue>{props.compProfile.phone}</DataValue>
+            </DataProperty>
+            <DataProperty>
+                Industry:<DataValue>{props.compProfile.finnhubIndustry}</DataValue>
+            </DataProperty>
+            <DataProperty>
+                IPO:<DataValue>{props.compProfile.ipo}</DataValue>
+            </DataProperty>
+        </DataPointContainer>
     )
 }
 const mapStateToProps = reduxState =>reduxState.stockReducer;
