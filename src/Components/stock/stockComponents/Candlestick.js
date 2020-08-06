@@ -14,6 +14,7 @@ const Candlestick = props =>{
         const { width, height } = dimensions || wrapperRef.current.getBoundingClientRect();
             console.log(width, height)
         const svg=select(svgRef.current);
+        svg.style("background-color","#161920")
 
         const unixDateConversion=time=>{
             let date = new Date(time *1000);
@@ -56,6 +57,7 @@ const Candlestick = props =>{
         const xAxis = axisBottom(xScale).ticks(12);
             svg.select(".x-axis")
                 .style("transform", `translateY(${height-25}px)`)
+                .style("color", "white")
                 .call(xAxis)
         console.log(xAxis)
         
@@ -63,6 +65,7 @@ const Candlestick = props =>{
         const yAxis = axisLeft(yScale)
         svg.select(".y-axis")
         .style("transform", `translateX(${width}px)`)
+        .style("color", "white")
         .call(yAxis)
         
         console.log(yAxis)
