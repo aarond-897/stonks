@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import {DataProperty, DataValue, DataPointContainer, Title} from './KeyDataPoints';
 
-const MappedIncomeStatementContainer=styled(DataPointContainer)`
+export const MappedContainer=styled(DataPointContainer)`
     margin-left:2%;
     background-color: #55606B;
     height: 52vh;
@@ -13,11 +13,7 @@ const MappedIncomeStatementContainer=styled(DataPointContainer)`
     overflow: auto;
 `
 
-const ISTitle=styled(Title)`
-    margin-bottom:2%;
-`
-
-const ISDataProperty=styled(DataProperty)`
+export const ISDataProperty=styled(DataProperty)`
     font-size: larger;
     margin-bottom:2.4%;
 `
@@ -35,11 +31,11 @@ const IncomeStatement = props =>{
     console.log(props)
 
     return(
-        <MappedIncomeStatementContainer>
-            <ISTitle>Income Statement</ISTitle>
+        <MappedContainer>
+            <Title>Income Statement</Title>
             {mappedIncomeStatement}
             
-        </MappedIncomeStatementContainer>
+        </MappedContainer>
     )
 }
 

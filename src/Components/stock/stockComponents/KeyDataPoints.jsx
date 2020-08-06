@@ -9,6 +9,7 @@ export const DataPointContainer = styled.div`
     border-radius: 5%;
     margin-bottom:15%;
     margin-top:2%;
+    overflow: auto;
 `
 
 export const Title = styled.h3`

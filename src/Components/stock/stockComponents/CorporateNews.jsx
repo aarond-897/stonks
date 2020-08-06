@@ -1,19 +1,26 @@
 import {connect} from 'react-redux';
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import {DataProperty, DataValue, DataPointContainer, Title} from './KeyDataPoints';
+import {MappedContainer, ISDataProperty} from './IncomeStatement'
+
+const NewsContainer = styled(MappedContainer)`
+    display:flex;
+`
 
 const CorporateNews = props =>{
     const dailyNews = props.companyNews.map((item,i)=>(
-        <div className='article'>
+        <DataProperty className='article'>
             <p>{item.headline}</p>
-            <p>{item.summary}</p>
-            <p>{item.url}</p>
-            <p>Time</p>
-        </div>
+            <DataValue>{item.summary}</DataValue>
+            <DataValue>{item.url}</DataValue>
+        </DataProperty>
     ))
     return(
-        <div>
+        <MappedContainer>
+            <Title>Daily News</Title>
             {dailyNews}
-        </div>
+        </MappedContainer>
     )
 }
 
