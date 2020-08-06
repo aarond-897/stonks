@@ -5,6 +5,38 @@ import axios from 'axios';
 import {clearUser, setUser} from '../../redux/reducers/userReducer';
 import {setStock} from '../../redux/reducers/stockReducer';
 import { withRouter } from 'react-router-dom';
+import styled from 'styled-components';
+import {Title} from '../login/Login'
+
+//styled components
+
+const NavContainer = styled.div`
+width:100%;
+height:5vh;
+display:flex;
+background: #161920;
+justify-content:space-between;
+`
+
+const SearchContainer = styled.div`
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    align-self:center;
+`
+const ExitContainer = styled.div`
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-right:3%;
+`
+
+const NavTitle = styled(Title)`
+    font-size:xx-large;
+    margin-top:0.5%;
+    margin-left:3%;
+`
+
 
 const Nav = props =>{
     // console.log(props)
@@ -45,16 +77,25 @@ const Nav = props =>{
     }
 
     return(
-        <div>
+        <NavContainer>
+            <NavTitle>Rainmaker</NavTitle>
+            <SearchContainer>
             <input placeholder='Ticker search' value={ticker} onChange={e => setTicker(e.target.value)}/>
             <button onClick={handleSearch}>Search</button>
+            </SearchContainer>
+            <ExitContainer>
+                {/* <ButtonWrapper> */}
             <Link to='/portfolio'>
-                <p>Portfolio</p>
+                <button>Portfolio</button>
             </Link>
+            {/* </ButtonWrapper> */}
+            {/* <ButtonWrapper> */}
             <Link to='/'>
                 <button onClick={handleClick}>Logout</button>
             </Link>
-        </div>
+            {/* </ButtonWrapper> */}
+            </ExitContainer>
+        </NavContainer>
     )
 }
 

@@ -6,7 +6,23 @@ import {setUser} from '../../redux/reducers/userReducer';
 import styled from 'styled-components';
 
 //Styled Components
-    const Title=styled.h2`
+    export const Body = styled.div`
+        height: 100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background: #161920;
+        `;
+
+    const LoginSection = styled.div`
+        height: 40vh;
+        width:30%;
+        border: 5px solid grey;
+        border-radius: 5%;
+        background: #55606B;        
+        `;
+
+    export const Title=styled.h2`
         height:20%;
         color:Ivory;
         font-size:xxx-large;
@@ -14,52 +30,40 @@ import styled from 'styled-components';
         font-weight:bold;
     `
 
-    const Body = styled.div`
-        height: 100vh;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        background: #161920;
-        `;
-    
-    const LoginSection = styled.div`
-        height: 40vh;
-        width:30%;
-        border: 5px solid grey;
-        border-radius: 5%;     
-    `;
-
-    const InputText = styled.p`
+    export const InputText = styled.p`
         color:white;
         font-size:large;
     `;
 
-    const Input= styled.input`
+    export const Input= styled.input`
        background-color:#FF9E29;
        width:50%;
        height: 4%;
+       ::placeholder{
+           color:black;
+       }
     `;
     
-    const LoginRegister = styled.div`
+    export const LoginRegister = styled.div`
         display:flex;
-        height:40%;
+        height:30%;
         align-items:flex-end;
         justify-content:space-around;
         width:100%;
     `;
 
-    const ButtonWrapper = styled.div`
+    export const ButtonWrapper = styled.div`
         background-color: #585761;
         color: white;
         height: 3vh;
         width: 30%;
         border-radius: 15%;
         text-align:center;
-        vertical-align: middle;
+        /* vertical-align: middle; */
         /* //TODO change to pointer cursor */
     `;
 
-    const ButtonLogin = styled.button`
+    export const Button = styled.button`
         background-color: #585761;
         color: white;
         height: 3vh;
@@ -68,15 +72,6 @@ import styled from 'styled-components';
         text-align:center;
         vertical-align: middle;
     `;
-    // const ButtonRegister = styled.div`
-    //     background-color: #585761;
-    //     color: white;
-    //     /* height 3vh; */
-    //     width: 200%;
-    //     border-radius: 15%;
-    //     text-align:center;
-    //     vertical-align: middle;
-    // `
 
 const Login = props => {
     //hooks
@@ -103,16 +98,16 @@ const Login = props => {
             <LoginSection>
                 <Title>Rainmaker</Title>
                 <InputText>Email:</InputText>
-                <Input placeholder='email' value={email}  onChange={e => setEmail(e.target.value)}/>
+                <Input placeholder='Email' value={email}  onChange={e => setEmail(e.target.value)}/>
                 <InputText>Password:</InputText>
-                <Input placeholder='password' type='password' value={password} onChange={e => setPassword(e.target.value)}/>
+                <Input placeholder='Password' type='password' value={password} onChange={e => setPassword(e.target.value)}/>
                 <LoginRegister>
                 <ButtonWrapper>
-                    <ButtonLogin onClick={handleLogin}>Login</ButtonLogin>
+                    <Button onClick={handleLogin}>Login</Button>
                 </ButtonWrapper>
                 <ButtonWrapper>
                     <Link to='/register'>
-                        <ButtonLogin>Register</ButtonLogin>
+                        <Button>Register</Button>
                     </Link>
                 </ButtonWrapper>
                 </LoginRegister>

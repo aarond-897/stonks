@@ -23,7 +23,7 @@ const Stock = props =>{
              <Candlestick />
             <IncomeStatement />
             <CorporateInfo />
-            <Filings />
+            {/* <Filings /> */}
             <KeyDataPoints />
             <BalanceSheet />
             <CorporateNews /> 
