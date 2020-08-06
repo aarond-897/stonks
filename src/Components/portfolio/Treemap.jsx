@@ -12,30 +12,38 @@ const Treemap = props =>{
     const dimensions =useResizeObserver(wrapperRef);
 
     useEffect(()=>{
+        
         const { width, height } = dimensions || wrapperRef.current.getBoundingClientRect();
             // console.log(width, height)
         const svg=d3.select(svgRef.current)
             .attr("width",width)
             .attr("height", height)
+
+        svg.selectAll("*").remove();    
         const data={children:props.portfolio}
+        console.log(data)
 
 
         // Give the data to this cluster layout:
-        var root = d3.hierarchy(data).sum(d=>d.total);
+        const root = d3.hierarchy(data).sum(d=>d.total).sort((a, b) => b.industry - a.industry);
         console.log(root)
 
         // initialize treemap
         d3.treemap()
-            .size([width*.5, height])
+            .size([width, height])
             (root);
 
-        var nodes = svg
-                    .selectAll("rect")
-                    .data(root.descendants())
+        const nodes = svg
+                    .selectAll("g")
+                    .data(root.leaves())
+                    .join("g")
                     console.log(nodes)
 
         // draw rectangles
-        nodes.enter()
+
+        
+
+        nodes
             .append("rect")
             .attr('x', d=>d.x0 )
             .attr('y', d => d.y0)
@@ -45,14 +53,19 @@ const Treemap = props =>{
             .style('fill', d=>stc(d.data.industry))
             .style("stroke", "black")
             .style('padding','2px')
+
+            
+
+            
         console.log(nodes)
       
-        var nodeText = svg
-        .selectAll("text")
+        const nodeText = svg
+        .selectAll("g")
         .data(root.leaves())
+        .join("g")
 
     // add the text
-    nodeText.enter()
+    nodeText
         .append("text")
         .attr("x", d=>d.x0+2)
         .attr("y", d=> d.y0+13) 
@@ -61,12 +74,13 @@ const Treemap = props =>{
         .attr("fill", "black")
     
     // select node titles
-    var nodeVals = svg
-        .selectAll("vals")
-        .data(root.descendants())  
+    const nodeVals = svg
+        .selectAll("g")
+        .data(root.leaves())
+        .join("g")  
 
     // add the values
-    nodeVals.enter()
+    nodeVals
         .append("text")
         .attr("x", d => d.x0+2)
         .attr("y", d=>d.y0+27) 
@@ -74,7 +88,10 @@ const Treemap = props =>{
         .attr("font-size", "15px")
         .attr("fill", "black")
 
-    },[props.data,dimensions])
+    },[
+        props.portfolio,
+        dimensions
+    ])
 
 
 
