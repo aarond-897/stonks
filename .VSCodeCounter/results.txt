@@ -1,13 +1,13 @@
-Date : 2020-08-05 22:05:54
+Date : 2020-08-06 21:03:11
 Directory : c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks
-Total : 57 files,  16824 codes, 113 comments, 297 blanks, all 17234 lines
+Total : 57 files,  17139 codes, 116 comments, 330 blanks, all 17585 lines
 
 Languages
 +------------------+------------+------------+------------+------------+------------+
 | language         | files      | code       | comment    | blank      | total      |
 +------------------+------------+------------+------------+------------+------------+
 | JSON             |          3 |     15,300 |          0 |          3 |     15,303 |
-| JavaScript React |         16 |        687 |         18 |        121 |        826 |
+| JavaScript React |         16 |      1,002 |         21 |        154 |      1,177 |
 | JavaScript       |         16 |        621 |         67 |        123 |        811 |
 | CSS              |          5 |         91 |          5 |         12 |        108 |
 | SQL              |         14 |         61 |          0 |          4 |         65 |
@@ -20,7 +20,7 @@ Directories
 +-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
 | path                                                                                                                    | files      | code       | comment    | blank      | total      |
 +-------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
-| .                                                                                                                       |         57 |     16,824 |        113 |        297 |     17,234 |
+| .                                                                                                                       |         57 |     17,139 |        116 |        330 |     17,585 |
 | db                                                                                                                      |         14 |         61 |          0 |          4 |         65 |
 | db\auth                                                                                                                 |          2 |          7 |          0 |          0 |          7 |
 | db\seed                                                                                                                 |          3 |         19 |          0 |          3 |         22 |
@@ -28,14 +28,14 @@ Directories
 | public                                                                                                                  |          2 |         45 |         23 |          2 |         70 |
 | server                                                                                                                  |          4 |        229 |         19 |         49 |        297 |
 | server\controllers                                                                                                      |          3 |        193 |         12 |         38 |        243 |
-| src                                                                                                                     |         34 |      1,177 |         71 |        208 |      1,456 |
-| src\Components                                                                                                          |         20 |        836 |         24 |        162 |      1,022 |
-| src\Components\login                                                                                                    |          1 |        102 |          4 |         13 |        119 |
-| src\Components\nav                                                                                                      |          1 |         90 |          2 |         12 |        104 |
-| src\Components\portfolio                                                                                                |          6 |        188 |          7 |         46 |        241 |
-| src\Components\register                                                                                                 |          1 |         73 |          4 |         10 |         87 |
-| src\Components\stock                                                                                                    |         11 |        383 |          7 |         81 |        471 |
-| src\Components\stock\stockComponents                                                                                    |          9 |        332 |          7 |         71 |        410 |
+| src                                                                                                                     |         34 |      1,492 |         74 |        241 |      1,807 |
+| src\Components                                                                                                          |         20 |      1,151 |         27 |        195 |      1,373 |
+| src\Components\login                                                                                                    |          1 |        116 |          4 |         13 |        133 |
+| src\Components\nav                                                                                                      |          1 |        115 |          2 |         15 |        132 |
+| src\Components\portfolio                                                                                                |          6 |        319 |          8 |         66 |        393 |
+| src\Components\register                                                                                                 |          1 |         82 |          4 |         10 |         96 |
+| src\Components\stock                                                                                                    |         11 |        519 |          9 |         91 |        619 |
+| src\Components\stock\stockComponents                                                                                    |          9 |        458 |          9 |         81 |        548 |
 | src\redux                                                                                                               |          4 |         91 |          1 |         13 |        105 |
 | src\redux\reducers                                                                                                      |          3 |         80 |          1 |         11 |         92 |
 | src\redux\store                                                                                                         |          1 |         11 |          0 |          2 |         13 |
@@ -71,25 +71,25 @@ Files
 | c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\App.css                                               | CSS              |         33 |          0 |          6 |         39 |
 | c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\App.js                                                | JavaScript       |         15 |          3 |          3 |         21 |
 | c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\App.test.js                                           | JavaScript       |          8 |          0 |          2 |         10 |
-| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\login\Login.jsx                            | JavaScript React |        102 |          4 |         13 |        119 |
-| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\nav\Nav.jsx                                | JavaScript React |         90 |          2 |         12 |        104 |
-| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\OwnedStock.jsx                   | JavaScript React |         50 |          0 |          8 |         58 |
-| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\Portfolio.jsx                    | JavaScript React |         39 |          0 |          5 |         44 |
-| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\PortfolioStocks.jsx              | JavaScript React |         16 |          0 |          8 |         24 |
-| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\ProfileInfo.jsx                  | JavaScript React |         15 |          0 |          4 |         19 |
-| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\Treemap.jsx                      | JavaScript React |         68 |          7 |         18 |         93 |
+| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\login\Login.jsx                            | JavaScript React |        116 |          4 |         13 |        133 |
+| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\nav\Nav.jsx                                | JavaScript React |        115 |          2 |         15 |        132 |
+| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\OwnedStock.jsx                   | JavaScript React |         84 |          0 |         12 |         96 |
+| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\Portfolio.jsx                    | JavaScript React |         53 |          0 |          6 |         59 |
+| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\PortfolioStocks.jsx              | JavaScript React |         35 |          0 |          9 |         44 |
+| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\ProfileInfo.jsx                  | JavaScript React |         47 |          0 |          8 |         55 |
+| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\Treemap.jsx                      | JavaScript React |        100 |          8 |         28 |        136 |
 | c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\portfolio.css                    | CSS              |          0 |          0 |          3 |          3 |
-| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\register\Register.jsx                      | JavaScript React |         73 |          4 |         10 |         87 |
-| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\Stock.jsx                            | JavaScript React |         47 |          0 |         10 |         57 |
+| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\register\Register.jsx                      | JavaScript React |         82 |          4 |         10 |         96 |
+| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\Stock.jsx                            | JavaScript React |         57 |          0 |         10 |         67 |
 | c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stock.css                            | CSS              |          4 |          0 |          0 |          4 |
-| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\BalanceSheet.jsx     | JavaScript React |         17 |          0 |          3 |         20 |
+| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\BalanceSheet.jsx     | JavaScript React |         20 |          0 |          3 |         23 |
 | c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\Candlestick.js       | JavaScript       |        121 |          6 |         33 |        160 |
-| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\CorporateInfo.jsx    | JavaScript React |         16 |          1 |          3 |         20 |
-| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\CorporateNews.jsx    | JavaScript React |         19 |          0 |          3 |         22 |
+| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\CorporateInfo.jsx    | JavaScript React |         29 |          0 |          4 |         33 |
+| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\CorporateNews.jsx    | JavaScript React |         29 |          0 |          4 |         33 |
 | c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\Filings.jsx          | JavaScript React |         10 |          0 |          3 |         13 |
-| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\IncomeStatement.jsx  | JavaScript React |         19 |          0 |          7 |         26 |
-| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\KeyDataPoints.jsx    | JavaScript React |         27 |          0 |          4 |         31 |
-| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\StockHeader.jsx      | JavaScript React |         79 |          0 |         10 |         89 |
+| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\IncomeStatement.jsx  | JavaScript React |         39 |          0 |          9 |         48 |
+| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\KeyDataPoints.jsx    | JavaScript React |         69 |          0 |          8 |         77 |
+| c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\StockHeader.jsx      | JavaScript React |        117 |          3 |         12 |        132 |
 | c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\useResizeObserver.js | JavaScript       |         24 |          0 |          5 |         29 |
 | c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\index.css                                             | CSS              |         12 |          0 |          2 |         14 |
 | c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\index.js                                              | JavaScript       |         20 |          3 |          3 |         26 |
@@ -102,5 +102,5 @@ Files
 | c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\routes.js                                             | JavaScript       |         14 |          0 |          1 |         15 |
 | c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\serviceWorker.js                                      | JavaScript       |         98 |         31 |         13 |        142 |
 | c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\setupTests.js                                         | JavaScript       |          1 |          4 |          1 |          6 |
-| Total                                                                                                                   |                  |     16,824 |        113 |        297 |     17,234 |
+| Total                                                                                                                   |                  |     17,139 |        116 |        330 |     17,585 |
 +-------------------------------------------------------------------------------------------------------------------------+------------------+------------+------------+------------+------------+

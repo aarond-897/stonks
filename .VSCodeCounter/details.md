@@ -1,10 +1,10 @@
 # Details
 
-Date : 2020-08-05 22:05:55
+Date : 2020-08-06 21:03:11
 
 Directory c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks
 
-Total : 57 files,  16824 codes, 113 comments, 297 blanks, all 17234 lines
+Total : 57 files,  17139 codes, 116 comments, 330 blanks, all 17585 lines
 
 [summary](results.md)
 
@@ -37,25 +37,25 @@ Total : 57 files,  16824 codes, 113 comments, 297 blanks, all 17234 lines
 | [src/App.css](/src/App.css) | CSS | 33 | 0 | 6 | 39 |
 | [src/App.js](/src/App.js) | JavaScript | 15 | 3 | 3 | 21 |
 | [src/App.test.js](/src/App.test.js) | JavaScript | 8 | 0 | 2 | 10 |
-| [src/Components/login/Login.jsx](/src/Components/login/Login.jsx) | JavaScript React | 102 | 4 | 13 | 119 |
-| [src/Components/nav/Nav.jsx](/src/Components/nav/Nav.jsx) | JavaScript React | 90 | 2 | 12 | 104 |
-| [src/Components/portfolio/OwnedStock.jsx](/src/Components/portfolio/OwnedStock.jsx) | JavaScript React | 50 | 0 | 8 | 58 |
-| [src/Components/portfolio/Portfolio.jsx](/src/Components/portfolio/Portfolio.jsx) | JavaScript React | 39 | 0 | 5 | 44 |
-| [src/Components/portfolio/PortfolioStocks.jsx](/src/Components/portfolio/PortfolioStocks.jsx) | JavaScript React | 16 | 0 | 8 | 24 |
-| [src/Components/portfolio/ProfileInfo.jsx](/src/Components/portfolio/ProfileInfo.jsx) | JavaScript React | 15 | 0 | 4 | 19 |
-| [src/Components/portfolio/Treemap.jsx](/src/Components/portfolio/Treemap.jsx) | JavaScript React | 68 | 7 | 18 | 93 |
+| [src/Components/login/Login.jsx](/src/Components/login/Login.jsx) | JavaScript React | 116 | 4 | 13 | 133 |
+| [src/Components/nav/Nav.jsx](/src/Components/nav/Nav.jsx) | JavaScript React | 115 | 2 | 15 | 132 |
+| [src/Components/portfolio/OwnedStock.jsx](/src/Components/portfolio/OwnedStock.jsx) | JavaScript React | 84 | 0 | 12 | 96 |
+| [src/Components/portfolio/Portfolio.jsx](/src/Components/portfolio/Portfolio.jsx) | JavaScript React | 53 | 0 | 6 | 59 |
+| [src/Components/portfolio/PortfolioStocks.jsx](/src/Components/portfolio/PortfolioStocks.jsx) | JavaScript React | 35 | 0 | 9 | 44 |
+| [src/Components/portfolio/ProfileInfo.jsx](/src/Components/portfolio/ProfileInfo.jsx) | JavaScript React | 47 | 0 | 8 | 55 |
+| [src/Components/portfolio/Treemap.jsx](/src/Components/portfolio/Treemap.jsx) | JavaScript React | 100 | 8 | 28 | 136 |
 | [src/Components/portfolio/portfolio.css](/src/Components/portfolio/portfolio.css) | CSS | 0 | 0 | 3 | 3 |
-| [src/Components/register/Register.jsx](/src/Components/register/Register.jsx) | JavaScript React | 73 | 4 | 10 | 87 |
-| [src/Components/stock/Stock.jsx](/src/Components/stock/Stock.jsx) | JavaScript React | 47 | 0 | 10 | 57 |
+| [src/Components/register/Register.jsx](/src/Components/register/Register.jsx) | JavaScript React | 82 | 4 | 10 | 96 |
+| [src/Components/stock/Stock.jsx](/src/Components/stock/Stock.jsx) | JavaScript React | 57 | 0 | 10 | 67 |
 | [src/Components/stock/stock.css](/src/Components/stock/stock.css) | CSS | 4 | 0 | 0 | 4 |
-| [src/Components/stock/stockComponents/BalanceSheet.jsx](/src/Components/stock/stockComponents/BalanceSheet.jsx) | JavaScript React | 17 | 0 | 3 | 20 |
+| [src/Components/stock/stockComponents/BalanceSheet.jsx](/src/Components/stock/stockComponents/BalanceSheet.jsx) | JavaScript React | 20 | 0 | 3 | 23 |
 | [src/Components/stock/stockComponents/Candlestick.js](/src/Components/stock/stockComponents/Candlestick.js) | JavaScript | 121 | 6 | 33 | 160 |
-| [src/Components/stock/stockComponents/CorporateInfo.jsx](/src/Components/stock/stockComponents/CorporateInfo.jsx) | JavaScript React | 16 | 1 | 3 | 20 |
-| [src/Components/stock/stockComponents/CorporateNews.jsx](/src/Components/stock/stockComponents/CorporateNews.jsx) | JavaScript React | 19 | 0 | 3 | 22 |
+| [src/Components/stock/stockComponents/CorporateInfo.jsx](/src/Components/stock/stockComponents/CorporateInfo.jsx) | JavaScript React | 29 | 0 | 4 | 33 |
+| [src/Components/stock/stockComponents/CorporateNews.jsx](/src/Components/stock/stockComponents/CorporateNews.jsx) | JavaScript React | 29 | 0 | 4 | 33 |
 | [src/Components/stock/stockComponents/Filings.jsx](/src/Components/stock/stockComponents/Filings.jsx) | JavaScript React | 10 | 0 | 3 | 13 |
-| [src/Components/stock/stockComponents/IncomeStatement.jsx](/src/Components/stock/stockComponents/IncomeStatement.jsx) | JavaScript React | 19 | 0 | 7 | 26 |
-| [src/Components/stock/stockComponents/KeyDataPoints.jsx](/src/Components/stock/stockComponents/KeyDataPoints.jsx) | JavaScript React | 27 | 0 | 4 | 31 |
-| [src/Components/stock/stockComponents/StockHeader.jsx](/src/Components/stock/stockComponents/StockHeader.jsx) | JavaScript React | 79 | 0 | 10 | 89 |
+| [src/Components/stock/stockComponents/IncomeStatement.jsx](/src/Components/stock/stockComponents/IncomeStatement.jsx) | JavaScript React | 39 | 0 | 9 | 48 |
+| [src/Components/stock/stockComponents/KeyDataPoints.jsx](/src/Components/stock/stockComponents/KeyDataPoints.jsx) | JavaScript React | 69 | 0 | 8 | 77 |
+| [src/Components/stock/stockComponents/StockHeader.jsx](/src/Components/stock/stockComponents/StockHeader.jsx) | JavaScript React | 117 | 3 | 12 | 132 |
 | [src/Components/stock/stockComponents/useResizeObserver.js](/src/Components/stock/stockComponents/useResizeObserver.js) | JavaScript | 24 | 0 | 5 | 29 |
 | [src/index.css](/src/index.css) | CSS | 12 | 0 | 2 | 14 |
 | [src/index.js](/src/index.js) | JavaScript | 20 | 3 | 3 | 26 |

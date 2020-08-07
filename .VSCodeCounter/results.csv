@@ -1,5 +1,5 @@
-"filename", "language", "JSON", "JavaScript", "Markdown", "CSS", "SQL", "HTML", "XML", "JavaScript React", "comment", "blank", "total"
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\README.md", "Markdown", 0, 0, 37, 0, 0, 0, 0, 0, 0, 32, 69
+"filename", "language", "JSON", "Markdown", "JavaScript", "CSS", "SQL", "XML", "HTML", "JavaScript React", "comment", "blank", "total"
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\README.md", "Markdown", 0, 37, 0, 0, 0, 0, 0, 0, 0, 32, 69
 "c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\db\auth\check_user.sql", "SQL", 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2
 "c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\db\auth\register_user.sql", "SQL", 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5
 "c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\db\seed\stock.sql", "SQL", 0, 0, 0, 0, 7, 0, 0, 0, 0, 1, 8
@@ -16,44 +16,44 @@
 "c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\db\user\subtract_qty.sql", "SQL", 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
 "c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\package-lock.json", "JSON", 15220, 0, 0, 0, 0, 0, 0, 0, 0, 1, 15221
 "c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\package.json", "JSON", 55, 0, 0, 0, 0, 0, 0, 0, 0, 1, 56
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\public\index.html", "HTML", 0, 0, 0, 0, 0, 20, 0, 0, 23, 1, 44
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\public\index.html", "HTML", 0, 0, 0, 0, 0, 0, 20, 0, 23, 1, 44
 "c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\public\manifest.json", "JSON", 25, 0, 0, 0, 0, 0, 0, 0, 0, 1, 26
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\server\controllers\authCtrl.js", "JavaScript", 0, 74, 0, 0, 0, 0, 0, 0, 3, 15, 92
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\server\controllers\finnhubCtrl.js", "JavaScript", 0, 28, 0, 0, 0, 0, 0, 0, 9, 13, 50
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\server\controllers\userCtrl.js", "JavaScript", 0, 91, 0, 0, 0, 0, 0, 0, 0, 10, 101
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\server\index.js", "JavaScript", 0, 36, 0, 0, 0, 0, 0, 0, 7, 11, 54
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\server\controllers\authCtrl.js", "JavaScript", 0, 0, 74, 0, 0, 0, 0, 0, 3, 15, 92
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\server\controllers\finnhubCtrl.js", "JavaScript", 0, 0, 28, 0, 0, 0, 0, 0, 9, 13, 50
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\server\controllers\userCtrl.js", "JavaScript", 0, 0, 91, 0, 0, 0, 0, 0, 0, 10, 101
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\server\index.js", "JavaScript", 0, 0, 36, 0, 0, 0, 0, 0, 7, 11, 54
 "c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\App.css", "CSS", 0, 0, 0, 33, 0, 0, 0, 0, 0, 6, 39
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\App.js", "JavaScript", 0, 15, 0, 0, 0, 0, 0, 0, 3, 3, 21
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\App.test.js", "JavaScript", 0, 8, 0, 0, 0, 0, 0, 0, 0, 2, 10
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\login\Login.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 102, 4, 13, 119
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\nav\Nav.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 90, 2, 12, 104
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\OwnedStock.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 50, 0, 8, 58
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\Portfolio.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 39, 0, 5, 44
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\PortfolioStocks.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 16, 0, 8, 24
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\ProfileInfo.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 15, 0, 4, 19
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\Treemap.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 68, 7, 18, 93
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\App.js", "JavaScript", 0, 0, 15, 0, 0, 0, 0, 0, 3, 3, 21
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\App.test.js", "JavaScript", 0, 0, 8, 0, 0, 0, 0, 0, 0, 2, 10
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\login\Login.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 116, 4, 13, 133
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\nav\Nav.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 115, 2, 15, 132
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\OwnedStock.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 84, 0, 12, 96
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\Portfolio.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 53, 0, 6, 59
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\PortfolioStocks.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 35, 0, 9, 44
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\ProfileInfo.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 47, 0, 8, 55
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\Treemap.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 100, 8, 28, 136
 "c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\portfolio\portfolio.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\register\Register.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 73, 4, 10, 87
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\Stock.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 47, 0, 10, 57
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\register\Register.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 82, 4, 10, 96
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\Stock.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 57, 0, 10, 67
 "c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stock.css", "CSS", 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 4
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\BalanceSheet.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 17, 0, 3, 20
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\Candlestick.js", "JavaScript", 0, 121, 0, 0, 0, 0, 0, 0, 6, 33, 160
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\CorporateInfo.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 16, 1, 3, 20
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\CorporateNews.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 19, 0, 3, 22
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\BalanceSheet.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 20, 0, 3, 23
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\Candlestick.js", "JavaScript", 0, 0, 121, 0, 0, 0, 0, 0, 6, 33, 160
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\CorporateInfo.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 29, 0, 4, 33
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\CorporateNews.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 29, 0, 4, 33
 "c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\Filings.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 10, 0, 3, 13
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\IncomeStatement.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 19, 0, 7, 26
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\KeyDataPoints.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 27, 0, 4, 31
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\StockHeader.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 79, 0, 10, 89
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\useResizeObserver.js", "JavaScript", 0, 24, 0, 0, 0, 0, 0, 0, 0, 5, 29
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\IncomeStatement.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 39, 0, 9, 48
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\KeyDataPoints.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 69, 0, 8, 77
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\StockHeader.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 117, 3, 12, 132
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\Components\stock\stockComponents\useResizeObserver.js", "JavaScript", 0, 0, 24, 0, 0, 0, 0, 0, 0, 5, 29
 "c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\index.css", "CSS", 0, 0, 0, 12, 0, 0, 0, 0, 0, 2, 14
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\index.js", "JavaScript", 0, 20, 0, 0, 0, 0, 0, 0, 3, 3, 26
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\logo.svg", "XML", 0, 0, 0, 0, 0, 0, 7, 0, 0, 1, 8
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\redux\reducers\stockReducer.js", "JavaScript", 0, 20, 0, 0, 0, 0, 0, 0, 0, 4, 24
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\redux\reducers\stocksOwnedReducer.js", "JavaScript", 0, 22, 0, 0, 0, 0, 0, 0, 1, 3, 26
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\redux\reducers\userReducer.js", "JavaScript", 0, 38, 0, 0, 0, 0, 0, 0, 0, 4, 42
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\redux\store\store.js", "JavaScript", 0, 11, 0, 0, 0, 0, 0, 0, 0, 2, 13
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\index.js", "JavaScript", 0, 0, 20, 0, 0, 0, 0, 0, 3, 3, 26
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\logo.svg", "XML", 0, 0, 0, 0, 0, 7, 0, 0, 0, 1, 8
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\redux\reducers\stockReducer.js", "JavaScript", 0, 0, 20, 0, 0, 0, 0, 0, 0, 4, 24
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\redux\reducers\stocksOwnedReducer.js", "JavaScript", 0, 0, 22, 0, 0, 0, 0, 0, 1, 3, 26
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\redux\reducers\userReducer.js", "JavaScript", 0, 0, 38, 0, 0, 0, 0, 0, 0, 4, 42
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\redux\store\store.js", "JavaScript", 0, 0, 11, 0, 0, 0, 0, 0, 0, 2, 13
 "c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\reset.css", "CSS", 0, 0, 0, 42, 0, 0, 0, 0, 5, 1, 48
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\routes.js", "JavaScript", 0, 14, 0, 0, 0, 0, 0, 0, 0, 1, 15
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\serviceWorker.js", "JavaScript", 0, 98, 0, 0, 0, 0, 0, 0, 31, 13, 142
-"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\setupTests.js", "JavaScript", 0, 1, 0, 0, 0, 0, 0, 0, 4, 1, 6
-"Total", "-", 15300, 621, 37, 91, 61, 20, 7, 687, 113, 297, 17234
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\routes.js", "JavaScript", 0, 0, 14, 0, 0, 0, 0, 0, 0, 1, 15
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\serviceWorker.js", "JavaScript", 0, 0, 98, 0, 0, 0, 0, 0, 31, 13, 142
+"c:\Users\HAL\DevMtn\Curriculum\stonks-personal-project\stonks\src\setupTests.js", "JavaScript", 0, 0, 1, 0, 0, 0, 0, 0, 4, 1, 6
+"Total", "-", 15300, 37, 621, 91, 61, 7, 20, 1002, 116, 330, 17585

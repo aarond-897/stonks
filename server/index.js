@@ -10,6 +10,7 @@ const express = require('express'),
       massive = require('massive'),
       session = require('express-session'),
       {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET}=process.env,
+      path = require('path'),
       port=SERVER_PORT,
       app=express();
 app.use(express.json());
@@ -49,5 +50,10 @@ app.get('/api/portfolio', userCtrl.retrievePortfolio)
 //finnHub endpoint
 app.get('/api/ticker/:ticker', finnhubCtrl.getFinInfo)
 
+app.use(express.static(__dirname+'/../build'))
+
+app.get('*', (req,res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'))
+})
 
 app.listen(port, ()=>console.log(`Connected on port ${port}`))
