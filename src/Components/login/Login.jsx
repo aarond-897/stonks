@@ -19,7 +19,12 @@ import styled from 'styled-components';
         width:30%;
         border: 5px solid grey;
         border-radius: 5%;
-        background: #55606B;        
+        background: #55606B; 
+        @media (max-width: 768px) {
+        height: 100vh;
+        width:100%;
+        border-radius:0%;
+  }       
         `;
 
     export const Title=styled.h2`
@@ -28,6 +33,9 @@ import styled from 'styled-components';
         font-size:xxx-large;
         font-family:Times;
         font-weight:bold;
+        @media (max-width: 768px) {
+            margin-top:5%;
+  } 
     `
 
     export const InputText = styled.p`
@@ -59,6 +67,9 @@ import styled from 'styled-components';
         width: 30%;
         border-radius: 15%;
         text-align:center;
+        @media (max-width: 768px) {
+            height:10vh;
+        }
         /* vertical-align: middle; */
         /* //TODO change to pointer cursor */
     `;
@@ -71,6 +82,9 @@ import styled from 'styled-components';
         border-radius: 15%;
         text-align:center;
         vertical-align: middle;
+        @media (max-width: 768px) {
+            height:10vh;
+        }
     `;
 
 const Login = props => {

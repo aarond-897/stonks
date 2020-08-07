@@ -14,9 +14,9 @@ const StockHeaderContainer = styled.div`
     margin-bottom:1%;
 `
 
-const HeaderImage = styled.img`
-    height:100%;
-`
+// const HeaderImage = styled.img`
+//     height:100%;
+// `
 
 const AddStock = styled.div`
     display:flex;
@@ -25,11 +25,29 @@ const AddStock = styled.div`
 
 const HeaderProperty = styled.div`
     color: #F89A29;
+    @media (max-width: 768px) {
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+    margin-top:2.5%;
+    margin-left:1%;
+    font-size: 10px;
+    width:10%;
+    height:100%;
+    margin-right:2%;
+  } 
 `
 
 const HeaderValue = styled.div`
     color: #FFFAFA;
     display:inline-block;
+    @media (max-width: 768px) {
+    margin-top:2.5%;
+    margin-left:1%;
+    font-size: 10px;
+    width:10%;
+    height:100%;
+  } 
 `
 
 const Ticker = styled.h1`
@@ -37,6 +55,31 @@ const Ticker = styled.h1`
     font-size: 2.4vh;
     margin-left:3%;
     font-family:Arial, Helvetica, sans-serif;
+    @media (max-width: 768px) {
+    margin-top:2.5%;
+    margin-left:1%;
+    font-size: medium;
+    width:30%;
+    height:100%;
+  } 
+`
+
+const Input = styled.input`
+    @media (max-width: 768px) {
+    /* margin-top:2.5%; */
+    font-size: small;
+    width:30%;
+    height:100%;
+  } 
+`
+
+const Button = styled.button`
+    @media (max-width: 768px) {
+    /* margin-top:2.5%; */
+    font-size: xx-small;
+    width:75%;
+    height:3vh;
+  } 
 `
 
 const StockHeader = props =>{
@@ -78,8 +121,8 @@ const StockHeader = props =>{
             </HeaderProperty>
             <AddStock>
             {/* <HeaderProperty></HeaderProperty> */}
-            <input placeholder='qty' value={quantity} onChange={e => setQuantity(e.target.value)}/>
-            <button onClick={sendStockQty}>Add stock</button>
+            <Input placeholder='qty' value={quantity} onChange={e => setQuantity(e.target.value)}/>
+            <Button onClick={sendStockQty}>Add stock</Button>
             </AddStock>
         </StockHeaderContainer>
     )

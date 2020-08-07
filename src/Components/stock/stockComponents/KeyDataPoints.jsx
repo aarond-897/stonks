@@ -14,6 +14,14 @@ export const DataPointContainer = styled.div`
   width:0px;
   background:transparent;
 }
+@media (max-width: 768px) {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width:100%;
+    height:35vh;
+    margin-bottom:2%;
+  } 
 `
 
 export const Title = styled.h3`

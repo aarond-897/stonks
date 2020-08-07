@@ -12,7 +12,7 @@ const Img = styled.img`
 const PortfolioProperty = styled.div`
 color: #F89A29;
 font-size: large;
-margin-right: 2%;
+margin: 2%;
 display:flex;
 align-items:center;
 `
@@ -21,7 +21,11 @@ const PortfolioValue = styled.div`
 color: #FFFAFA;
 display:inline-block;
 `
-
+const Info = styled.div`
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+`
 
 export const InfoContainer = styled.div`
     display:flex;
@@ -37,8 +41,10 @@ const ProfileInfo = props =>{
     return (
         <InfoContainer>
             <Img className='profile-pic' src={props.profilePicture} alt=""/>
-            <PortfolioProperty>Username:<PortfolioValue>{props.username}</PortfolioValue></PortfolioProperty>
-            <PortfolioProperty>Email:   <PortfolioValue>{props.email}</PortfolioValue></PortfolioProperty>   
+            <Info>
+                <PortfolioProperty>Username:<PortfolioValue>{props.username}</PortfolioValue></PortfolioProperty>
+                <PortfolioProperty>Email:   <PortfolioValue>{props.email}</PortfolioValue></PortfolioProperty>
+            </Info>   
         </InfoContainer>
     )
 

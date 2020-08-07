@@ -35,6 +35,34 @@ const NavTitle = styled(Title)`
     font-size:xx-large;
     margin-top:0.5%;
     margin-left:3%;
+    @media (max-width: 768px) {
+    margin-top:2.5%;
+    font-size: large;
+  } 
+`
+
+const Input = styled.input`
+    @media (max-width: 768px) {
+    margin-top:2.5%;
+    font-size: small;
+    width:25%;
+    height:1.75vh;
+  } 
+`
+
+const Button = styled.button`
+    @media (max-width: 768px) {
+    margin-top:2.5%;
+    font-size: xx-small;
+    width:25%;
+    height:2.5vh;
+  } 
+`
+
+const NavButton = styled(Button)`
+    @media (max-width: 768px) {
+    width:100%;
+  } 
 `
 
 
@@ -80,18 +108,18 @@ const Nav = props =>{
         <NavContainer>
             <NavTitle>Rainmaker</NavTitle>
             <SearchContainer>
-            <input placeholder='Ticker search' value={ticker} onChange={e => setTicker(e.target.value)}/>
-            <button onClick={handleSearch}>Search</button>
+            <Input placeholder='Ticker' value={ticker} onChange={e => setTicker(e.target.value)}/>
+            <Button onClick={handleSearch}>Search</Button>
             </SearchContainer>
             <ExitContainer>
                 {/* <ButtonWrapper> */}
             <Link to='/portfolio'>
-                <button>Portfolio</button>
+                <NavButton>Portfolio</NavButton>
             </Link>
             {/* </ButtonWrapper> */}
             {/* <ButtonWrapper> */}
             <Link to='/'>
-                <button onClick={handleClick}>Logout</button>
+                <NavButton onClick={handleClick}>Logout</NavButton>
             </Link>
             {/* </ButtonWrapper> */}
             </ExitContainer>

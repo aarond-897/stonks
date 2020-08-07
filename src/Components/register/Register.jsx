@@ -17,6 +17,11 @@ const RegisterSection = styled.div`
     background: #55606B;   
     display:flex;
     flex-direction:column; 
+    @media (max-width: 768px) {
+        height: 100vh;
+        width:100%;
+        border-radius:0%;
+  }     
 `
 
 const Image = styled.img`
@@ -25,6 +30,10 @@ const Image = styled.img`
     border-radius:40%;
     align-self:center;
     margin-bottom:5%;
+    @media (max-width: 768px) {
+        height: 25vh;
+        width:40%;
+  }   
 `
 
 const RegisterInputs=styled.div`

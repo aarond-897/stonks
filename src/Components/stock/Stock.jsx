@@ -13,16 +13,26 @@ import {connect} from 'react-redux';
 import styled from 'styled-components';
 
 const StockContainer=styled.div`
+    height:100%;
     background-color:#161920;
 `
 const InfoContainer = styled.div`
     display:flex;
+    @media (max-width: 768px) {
+    flex-direction:row;
+    flex-wrap:wrap;
+  } 
 `
 
 const KeyDataAndInfo = styled.div`
     display:flex;
     flex-direction:column;
     width:30%;
+    @media (max-width: 768px) {
+    width:100%;
+    flex-direction:row;
+    flex-wrap:wrap;
+  } 
 `
 
 const Stock = props =>{
