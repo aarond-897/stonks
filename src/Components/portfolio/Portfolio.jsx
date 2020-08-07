@@ -6,6 +6,19 @@ import {setStocks} from '../../redux/reducers/stocksOwnedReducer'
 import PortfolioStocks from './PortfolioStocks'
 import Treemap from './Treemap'
 import './portfolio.css'
+import styled from 'styled-components';
+
+const PortfolioContainer = styled.div`
+    display:flex;
+    height:100%;
+    background: #161920;
+
+`
+const InfoAndPortfolio = styled.div`
+width:40%;
+height:95vh;
+
+`
 
 
 const Portfolio = props =>{
@@ -26,17 +39,19 @@ const Portfolio = props =>{
         })
     }
     return(
-        <div>
+        <PortfolioContainer>
             {props.portfolio[0]?
             <>
             {console.log(props)}
+            <InfoAndPortfolio>
             <ProfileInfo />
             <PortfolioStocks />
+            </InfoAndPortfolio>
             <Treemap />
-            <button onClick={retrieveStocks}>retrieve stocks</button>
+            {/* <button onClick={retrieveStocks}>retrieve stocks</button> */}
             </>
-        :<p>Please add stocks</p>}
-        </div>
+        :<p>Please add stocks using the search bar above</p>}
+        </PortfolioContainer>
     )
 }
 

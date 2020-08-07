@@ -3,7 +3,17 @@ import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import useResizeObserver from "../stock/stockComponents/useResizeObserver";
 import * as stc from 'string-to-color';
+import { withRouter } from 'react-router-dom';
+import {setStock} from '../../redux/reducers/stockReducer';
+import axios from 'axios';
+import styled from 'styled-components';
 
+
+const TreemapSvg = styled.svg`
+    width:60vw;
+    height:94vh;
+    cursor: pointer;
+`
 
 const Treemap = props =>{
     console.log(props)
@@ -50,10 +60,18 @@ const Treemap = props =>{
             .attr('width', d =>d.x1 - d.x0)
             .attr('height', d =>d.y1 - d.y0)
             .attr('class', d=>d.data.industry)
+            // .style('margin','20px')
             .style('fill', d=>stc(d.data.industry))
             .style("stroke", "black")
             .style('padding','2px')
-
+            .on("click",d=>{
+                axios.get(`/api/ticker/${d.data.ticker}`)
+                .then(res=>{
+                    props.setStock(res.data)
+                    props.history.push(`/stock/${d.data.ticker}`)
+            }
+            )
+        })
             
 
             
@@ -69,7 +87,15 @@ const Treemap = props =>{
         .append("text")
         .attr("x", d=>d.x0+2)
         .attr("y", d=> d.y0+13) 
-        .text(d => d.data.ticker)
+        .text(d => d.data.ticker.toUpperCase())
+        .attr("font-size", "15px")
+        .attr("fill", "black")
+
+        nodeText
+        .append("text")
+        .attr("x", d=>d.x0+2)
+        .attr("y", d=> d.y0+40) 
+        .text(d => d.data.industry)
         .attr("font-size", "15px")
         .attr("fill", "black")
     
@@ -84,7 +110,7 @@ const Treemap = props =>{
         .append("text")
         .attr("x", d => d.x0+2)
         .attr("y", d=>d.y0+27) 
-        .text(d => d.data.total)
+        .text(d => `$${d.data.total}`)
         .attr("font-size", "15px")
         .attr("fill", "black")
 
@@ -98,8 +124,8 @@ const Treemap = props =>{
 return(
     <React.Fragment>
         <div ref={wrapperRef}>
-            <svg ref={svgRef}>
-            </svg>
+            <TreemapSvg ref={svgRef}>
+            </TreemapSvg>
         </div>
     </React.Fragment>
 )
@@ -107,4 +133,4 @@ return(
 
 const mapStateToProps=reduxState=>reduxState.portfolio;
 
-export default connect(mapStateToProps)(Treemap);
+export default connect(mapStateToProps,{setStock})(withRouter(Treemap));

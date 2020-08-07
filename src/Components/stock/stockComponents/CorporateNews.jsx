@@ -5,7 +5,11 @@ import {DataProperty, DataValue, DataPointContainer, Title} from './KeyDataPoint
 import {MappedContainer, ISDataProperty} from './IncomeStatement'
 
 const NewsContainer = styled(MappedContainer)`
-    display:flex;
+    /* display:flex; */
+    ::-webkit-scrollbar {
+  width:0px;
+  background:transparent;
+}
 `
 
 const CorporateNews = props =>{
@@ -17,10 +21,10 @@ const CorporateNews = props =>{
         </DataProperty>
     ))
     return(
-        <MappedContainer>
+        <NewsContainer>
             <Title>Daily News</Title>
             {dailyNews}
-        </MappedContainer>
+        </NewsContainer>
     )
 }
 

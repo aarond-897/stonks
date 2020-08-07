@@ -16,6 +16,10 @@ export const MappedContainer=styled(DataPointContainer)`
 export const ISDataProperty=styled(DataProperty)`
     font-size: larger;
     margin-bottom:2.4%;
+    ::-webkit-scrollbar {
+  width:0px;
+  background:transparent;
+}
 `
 
 const IncomeStatement = props =>{

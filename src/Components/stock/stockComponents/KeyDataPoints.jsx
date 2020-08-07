@@ -10,6 +10,10 @@ export const DataPointContainer = styled.div`
     margin-bottom:15%;
     margin-top:2%;
     overflow: auto;
+    ::-webkit-scrollbar {
+  width:0px;
+  background:transparent;
+}
 `
 
 export const Title = styled.h3`
