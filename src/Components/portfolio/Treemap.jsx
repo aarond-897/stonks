@@ -13,6 +13,12 @@ const TreemapSvg = styled.svg`
     width:60vw;
     height:94vh;
     cursor: pointer;
+        @media (max-width: 1500px) {
+        flex-direction:column;
+        height: 60vh;
+        width:100%;
+        border-radius:0%;
+  }  
 `
 
 const Treemap = props =>{

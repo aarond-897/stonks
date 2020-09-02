@@ -35,6 +35,7 @@ const NavTitle = styled(Title)`
     font-size:xx-large;
     margin-top:0.5%;
     margin-left:3%;
+    color: #E3E7F0;
     @media (max-width: 768px) {
     margin-top:2.5%;
     font-size: large;

@@ -4,25 +4,25 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import {setUser} from '../../redux/reducers/userReducer';
 import styled from 'styled-components';
-import {Body, Title,Input, ButtonWrapper, LoginRegister, Button} from '../login/Login'
+import {Body, Title,Input, ButtonWrapper, LoginRegister, Button, LoginSection,Cloud} from '../login/Login'
 
 //Style Components
 
 
-const RegisterSection = styled.div`
-    height: 40vh;
-    width:30%;
-    border: 5px solid grey;
-    border-radius: 5%;
-    background: #55606B;   
-    display:flex;
-    flex-direction:column; 
-    @media (max-width: 768px) {
-        height: 100vh;
-        width:100%;
-        border-radius:0%;
-  }     
-`
+// const RegisterSection = styled.div`
+//     height: 40vh;
+//     width:30%;
+//     border: 5px solid grey;
+//     border-radius: 5%;
+//     background: #55606B;   
+//     display:flex;
+//     flex-direction:column; 
+//     @media (max-width: 768px) {
+//         height: 100vh;
+//         width:100%;
+//         border-radius:0%;
+//   }     
+// `
 
 const Image = styled.img`
     height:12.5vh;
@@ -40,12 +40,22 @@ const RegisterInputs=styled.div`
     display:flex;
     flex-direction:column;
     align-items:center;
+    width:60%;
+    margin-top:-3.5%;
 `
 
 const RegisterInput = styled(Input)`
     height:100%;
     margin-bottom:3%;
 `
+const RegisterSection = styled(LoginSection)`
+`
+
+const RegisterButtons= styled(LoginRegister)`
+    display:flex;
+    align-items:center;
+`
+
 
 const Register= props => {
     //Hooks
@@ -53,11 +63,13 @@ const Register= props => {
         [username, setUsername]=useState(''),
         [password, setPassword] = useState(''),
         [profilePicture, setProfilePicture] =useState('');
+        let sentProfilePicture = profilePicture===''? 'https://legacyogden.com/wp-content/uploads/2015/07/No-Image-Available1.png': profilePicture;
 
     //Register Action
     const handleRegister=()=>{
         console.log('register pressed')
-        axios.post('/auth/register',{email,username,password,profilePicture})
+        
+        axios.post('/auth/register',{email,username,password,sentProfilePicture})
         .then(res=>{
             console.log(res.data)
             console.log(props)
@@ -69,25 +81,26 @@ const Register= props => {
 
     return(
         <Body> 
+            <Cloud></Cloud>
             <RegisterSection>
                 <Title>Register</Title>
-                <Image src={profilePicture} alt= {`Profile picture of ${username}`}/>
+                <Image src={sentProfilePicture} alt= {`Profile picture of ${username}`}/>
                 <RegisterInputs>
-                <RegisterInput placeholder='profile picture' value={profilePicture} onChange={e=> setProfilePicture(e.target.value)}/>
+                <RegisterInput placeholder='profile picture url' value={profilePicture} onChange={e=> setProfilePicture(e.target.value)}/>
                 <RegisterInput placeholder='email' value={email} onChange={e => setEmail(e.target.  value)}/>
                 <RegisterInput placeholder='username' value={username} onChange={e=> setUsername (e.target.value)}/>
                 <RegisterInput placeholder='password' value={password} type='password' onChange={e => setPassword(e.target.value)}/>
                 </RegisterInputs>
-                <LoginRegister>
-                <ButtonWrapper>
-                <Button onClick={handleRegister}>Register</Button>
-                </ButtonWrapper>
+                <RegisterButtons>
                 <ButtonWrapper>
                 <Link to='/'>
                 <Button>Login</Button>
                 </Link>
                 </ButtonWrapper>
-                </LoginRegister>
+                <ButtonWrapper>
+                <Button onClick={handleRegister}>Register</Button>
+                </ButtonWrapper>
+                </RegisterButtons>
                 </RegisterSection>
         </Body>
     )

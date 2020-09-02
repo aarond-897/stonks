@@ -5,21 +5,59 @@ import axios from 'axios';
 import {setStocks} from '../../redux/reducers/stocksOwnedReducer'
 import PortfolioStocks from './PortfolioStocks'
 import Treemap from './Treemap'
-import './portfolio.css'
-import styled from 'styled-components';
+import styled, {keyframes, animation} from 'styled-components';
+import {AnimatedBackground} from '../login/Login';
 
 const PortfolioContainer = styled.div`
     display:flex;
     height:100%;
-    background: #161920;
-
+    animation: 5s ${AnimatedBackground}  alternate;
+    opacity:1;
+    background: linear-gradient(#E9EDF6,#E3E7F0);
+    @media (max-width: 1550px) {
+        flex-direction:column;
+        height: 100%;
+        width:100%;
+        border-radius:0%;
+  }       
 `
 const InfoAndPortfolio = styled.div`
 width:40%;
 height:95vh;
-
+    @media (max-width: 1550px) {
+        flex-direction:column;
+        height: 50%;
+        width:100%;
+        border-radius:0%;
+  }  
 `
 
+const NewPortfolioContainer = styled.div`
+    height:100vh;
+    width:100%;
+`
+
+const AnimatedArrow = keyframes`
+    from{
+        top:0%;
+    }
+    to{
+        top: -8%;
+    }
+`;
+
+const Arrow = styled.div`
+    position:relative;   
+    text-align:center;
+    margin-top: 15%;
+    font-size:75px;
+    animation: ${AnimatedArrow} 1s infinite alternate;
+`;
+
+const PleaseSearch = styled.h1`
+    font-size: 3.5vw;
+    font-family: Times;
+`
 
 const Portfolio = props =>{
     console.log(props)
@@ -50,7 +88,11 @@ const Portfolio = props =>{
             <Treemap />
             {/* <button onClick={retrieveStocks}>retrieve stocks</button> */}
             </>
-        :<p>Please add stocks using the search bar above</p>}
+        :<NewPortfolioContainer>
+            <Arrow>&#8593;</Arrow>
+            <PleaseSearch>Please enter stock ticker using the search bar above</PleaseSearch>
+        </NewPortfolioContainer>
+        }
         </PortfolioContainer>
     )
 }

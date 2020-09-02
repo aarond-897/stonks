@@ -3,23 +3,52 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import {setUser} from '../../redux/reducers/userReducer';
-import styled from 'styled-components';
+import styled, {keyframes, animation} from 'styled-components';
+import img from './skyscraper.jpg';
+import cloud from './cloud.png';
 
 //Styled Components
+
+    export const AnimatedBackground = keyframes`
+        from {
+            opacity:0.0;
+        }
+        to{
+            opacity:0.9;
+        }
+    `;
+
+    export const AnimatedClouds = keyframes`
+    0% {
+        background-position:0px;
+    }
+    100%{
+        background-position:5440px;
+    }
+    `;
+
     export const Body = styled.div`
+        background: url(${img}) no-repeat center center fixed;
         height: 100vh;
+        width:100%;
         display:flex;
         justify-content:center;
         align-items:center;
-        background: #161920;
         `;
 
-    const LoginSection = styled.div`
+    export const LoginSection = styled.div`
         height: 40vh;
         width:30%;
-        border: 5px solid grey;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        /* border: 5px solid grey; */
         border-radius: 5%;
-        background: #55606B; 
+        background: linear-gradient(#E9EDF6,#E3E7F0); 
+        animation: 3s ${AnimatedBackground};
+        opacity:0.9;
+        z-index:1;
         @media (max-width: 768px) {
         height: 100vh;
         width:100%;
@@ -29,7 +58,7 @@ import styled from 'styled-components';
 
     export const Title=styled.h2`
         height:20%;
-        color:Ivory;
+        /* color:Bl; */
         font-size:xxx-large;
         font-family:Times;
         font-weight:bold;
@@ -39,12 +68,12 @@ import styled from 'styled-components';
     `
 
     export const InputText = styled.p`
-        color:white;
+        /* color:white; */
         font-size:large;
     `;
 
     export const Input= styled.input`
-       background-color:#FF9E29;
+       /* background-color:#FF9E29; */
        width:50%;
        height: 4%;
        ::placeholder{
@@ -82,10 +111,23 @@ import styled from 'styled-components';
         border-radius: 15%;
         text-align:center;
         vertical-align: middle;
+        cursor:pointer;
         @media (max-width: 768px) {
             height:10vh;
         }
     `;
+
+    export const Cloud=styled.div`
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-image:url(${cloud});
+        animation: 100s ${AnimatedClouds} linear infinite;
+        background-size:cover;
+    `;
+
 
 const Login = props => {
     //hooks
@@ -109,11 +151,12 @@ const Login = props => {
 
     return(
         <Body >
+            <Cloud></Cloud>
             <LoginSection>
                 <Title>Rainmaker</Title>
-                <InputText>Email:</InputText>
+                {/* <InputText>Email:</InputText> */}
                 <Input placeholder='Email' value={email}  onChange={e => setEmail(e.target.value)}/>
-                <InputText>Password:</InputText>
+                {/* <InputText>Password:</InputText> */}
                 <Input placeholder='Password' type='password' value={password} onChange={e => setPassword(e.target.value)}/>
                 <LoginRegister>
                 <ButtonWrapper>
